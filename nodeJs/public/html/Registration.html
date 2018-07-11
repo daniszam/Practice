@@ -6,7 +6,15 @@
             font-family: 'Raleway', sans-serif !important;
             background: #e3f2fd !important;
         }
+        .form-row .control-label:after {
+            content:"*";
+            color:red;
+        }
 
+        .form-group .control-label:after {
+            content:"*";
+            color:red;
+        }
 
     </style>
     <meta charset="UTF-8">
@@ -29,18 +37,18 @@
     <div class="col-6" style="background: #e3f2fd;">
         <div class="card" style="border-color: black; border-width: 1px; border-radius: 10px; width: 700px; background-color: #e3f2fd">
             <div class="card-body" style="background-color: #eff6fe; border-radius: 10px;">
-                <form>
+                <form action="/info">
                     <div class="form-row">
                         <div class="col-md-4 mb-3">
-                            <label for="validationServer01">First name</label>
-                            <input type="text" class="form-control" id="validationServer01" placeholder="First name" required>
+                            <label class="control-label" for="validationServer01">First name</label>
+                            <input name="FirstName" type="text" class="form-control" id="validationServer01" placeholder="First name" required>
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label for="validationServer02">Last name</label>
-                            <input type="text" class="form-control" id="validationServer02" placeholder="Last name" required>
+                            <label class="control-label" for="validationServer02">Last name</label>
+                            <input name="LastName" type="text" class="form-control" id="validationServer02" placeholder="Last name" required>
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -48,20 +56,20 @@
                     </div>
                     <div class="form-row">
                         <div class="col-md-4 mb-3">
-                            <label for="validationServerUsername">Username</label>
+                            <label class="control-label" for="validationServerUsername">Username</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="inputGroupPrepend3">@</span>
                                 </div>
-                                <input type="text" class="form-control" id="validationServerUsername" placeholder="Username" aria-describedby="inputGroupPrepend3" style="border-bottom-right-radius:  4px; border-top-right-radius: 4px" required>
+                                <input name="Username" type="text" class="form-control" id="validationServerUsername" placeholder="Username" aria-describedby="inputGroupPrepend3" style="border-bottom-right-radius:  4px; border-top-right-radius: 4px" required>
                                 <div class="invalid-feedback">
                                     Please choose a username.
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label for="validationServerPas">Password</label>
-                            <input type="text" class="form-control" id="validationServerPas" placeholder="Password" required>
+                            <label class="control-label" for="validationServerPas">Password</label>
+                            <input name="Password" type="text" class="form-control" id="validationServerPas" placeholder="Password"  required>
                             <div class="invalid-feedback">
                                 Please choose a password.
                             </div>
@@ -69,29 +77,29 @@
                     </div>
                     <div class="form-row">
                         <div class="col-md-6 mb-3">
-                            <label for="validationServer03">City</label>
-                            <input type="text" class="form-control" id="validationServer03" placeholder="City" required>
+                            <label class="control-label" for="validationServer03">Email</label>
+                            <input name="Email" type="email" class="form-control" id="validationServer03" placeholder="Email" required>
                             <div class="invalid-feedback">
                                 Please provide a valid city.
                             </div>
                         </div>
                         <div class="col-md-3 mb-3">
-                            <label for="validationServer04">State</label>
-                            <input type="text" class="form-control" id="validationServer04" placeholder="State" required>
+                            <label class="control-label" for="validationServer04">State</label>
+                            <input name="State" type="text" class="form-control" id="validationServer04" placeholder="State" required>
                             <div class="invalid-feedback">
                                 Please provide a valid state.
                             </div>
                         </div>
                         <div class="col-md-3 mb-3">
                             <label for="validationServer05">Zip</label>
-                            <input type="text" class="form-control" id="validationServer05" placeholder="Zip" required>
+                            <input name="Zip" type="text" class="form-control" id="validationServer05" placeholder="Zip" >
                             <div class="invalid-feedback">
                                 Please provide a valid zip.
                             </div>
                         </div>
                         <div class="col-md-3 mb-3">
-                            <label class="Gender">Gender</label>
-                            <select class="form-control form-control-sm" id="Gender" required>
+                            <label class="control-label" class="Gender">Gender</label>
+                            <select name="Gender" class="form-control form-control-sm" id="Gender" required>
                                 <option></option>
                                 <option>Male</option>
                                 <option>Female</option>
@@ -102,7 +110,7 @@
                     <div class="form-group">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="invalidCheck3" required>
-                            <label class="form-check-label" for="invalidCheck3">
+                            <label  class="control-label" class="form-check-label" for="invalidCheck3">
                                 Agree to terms and conditions
                             </label>
                             <div class="invalid-feedback">
@@ -110,7 +118,8 @@
                             </div>
                         </div>
                     </div>
-                    <a href="LogIn.html" class="btn btn-primary" role="button" aria-disabled="true">Submit</a>
+                    <button type="submit" class="btn btn-primary">Log In</button>
+                    <!--a href="LogIn.html" type="submit" class="btn btn-primary" role="button" aria-disabled="true">Submit</a-->
                     <a href="LogIn.html" class="btn" role="button" aria-disabled="true" style="padding-left: 500px; padding-top: 20px">Back</a>
                 </form>
             </div>
