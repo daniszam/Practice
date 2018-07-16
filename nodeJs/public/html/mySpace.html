@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif !important;
+            background: #e3f2fd !important;
+        }
+        .form-row .control-label:after {
+            content:"*";
+            color:red;
+        }
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+    <meta name="viewport" content="width=device-width, intial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <script>
+        function getInfo() {
+            var xmlHttp = new XMLHttpRequest();
+            var url = '/getUsers';
+
+            xmlHttp.onreadystatechange = function () {
+                if (this.readyState === 4 && this.status === 200) {
+                    var users = JSON.parse(this.responseText);
+                    var card = document.getElementById('user');
+
+
+                    console.log(users);
+                    var htmlCardResult = '<div class="card" style="border-color: black; border-width: 1px; border-radius: 10px; width: 700px; background-color: #e3f2fd" id="user">'+
+                            '<div class="card-body" style="background-color: #eff6fe; border-radius: 10px;">'+
+                               ' <form method="post" action="/info">'+
+                                '<div class="form-row">'+
+                                    '<div class="col-md-4 mb-3">'+
+                                       ' <label>First name: ' + users[0].firstName+ '</label>'+
+                                    '</div>'+
+                                    '<div class="col-md-4 mb-3">'+
+                                       ' <label>Last name: ' + users[0].lastName + '</label>'+
+                                    '</div>'+
+                                   ' </div>'+
+                                    '<div class="form-row">'+
+                                        '<div class="col-md-4 mb-3">'+
+                                            '<div class="input-group-prepend" style="width: 3rem">'+
+                                                '<span class="input-group-text" id="inputGroupPrepend3">@</span>'+
+                                                '<h6 style="margin-left: 10px; margin-top: 10px">' + users[0].username + '</h6>'+
+                                            '</div>'+
+                                        '</div>'+
+                                    '</div>'+
+                                    '<div class="form-row">'+
+                                        '<div class="col-md-5 mb-3">'+
+                                            '<label>Email: '+ users[0].email +  '</label>'+
+                                       ' </div>'+
+                                        '<div class="col-md-2 mb-3">'+
+                                            '<label>City: ' + users[0].city + '</label>'+
+                                        '</div>'+
+                                        '<div class="col-md-2 mb-3">'+
+                                         '   <label>Zip: ' + users[0].zip + '</label>'+
+                                       ' </div>'+
+                                       ' <div class="col-md-4 mb-3">'+
+                                            '<label>Gender: ' + users[0].gender + '</label>'+
+                                        '</div>'+
+                                    '</div>'+
+                                '</form>'+
+                            '</div>';
+                    }
+                    card.innerHTML=htmlCardResult;
+
+
+            };
+            xmlHttp.open('GET', url, true);
+            xmlHttp.send();
+        }
+    </script>
+</head>
+<body onload="getInfo()">
+
+
+
+<div class="d-flex align-items-center flex-column justify-content-center text-black" id="header" style="margin-top: 10%;">
+    <div style="background: #e3f2fd;" id="user"></div>
+
+</div>
+<div class="navbar navbar-expand-lg navbar-default fixed-bottom" style="background-color: #e3f2fd">
+    <div class="container-fluid">
+        <p class="text-left" style="color: black">&copy; 2018 Zamaliev Danis</p>
+        <a href="MySite.html" class="btn-right" role="button" aria-disabled="true" style="color: black">To Site</a>
+    </div>
+</div>
+</nav>
+</body>
+</html>

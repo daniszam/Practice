@@ -20,24 +20,26 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
+
+
 </head>
 <body>
 
 
 
-<div class="d-flex align-items-center flex-column justify-content-center text-black" id="header" style="margin-top: 13%">
+<div class="d-flex align-items-center flex-column justify-content-center text-black" id="header" style="margin-top: 10%">
     <div class="col-3" style="background: #e3f2fd">
         <div class="card" style="border-color: black; border-width: 1px; border-radius: 10px; background-color: #e3f2fd">
             <div class="card-body" style="background-color: #eff6fe; border-radius: 10px;">
-                <form>
+                <form method="get" action="/tryToLogIn">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
                         <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
                     <div class="form-group">
-                        <label name="password" for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                     </div>
                     <div class="form-group form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif !important;
+            background: #e3f2fd !important;
+        }
+        .form-row .control-label:after {
+            content:"*";
+            color:red;
+        }
+
+        .form-group .control-label:after {
+            content:"*";
+            color:red;
+        }
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+    <meta name="viewport" content="width=device-width, intial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+
+
+<div class="d-flex align-items-center flex-column justify-content-center-fluid text-black" id="header" style="margin-top: 10%;">
+    <div class="col-6" style="background: #e3f2fd;">
+        <div class="card" style="border-color: black; border-width: 1px; border-radius: 10px; width: 700px; background-color: #e3f2fd">
+            <div class="card-body" style="background-color: #eff6fe; border-radius: 10px;">
+                <form method="post" action="/newCard">
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <label class="control-label" for="validationServer01">href</label>
+                            <input name="href" type="link" class="form-control" id="validationServer01" placeholder="href" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <label class="control-label" for="validationServerPas">Card Title</label>
+                            <input name="cardTitle" type="text" class="form-control" id="validationServerPas" placeholder="Card Title"  required>
+                            <div class="invalid-feedback">
+                                Please choose a password.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label class="control-label" for="validationServer03">Card image-top</label>
+                            <input name="cardImageTop" type="link" class="form-control" id="validationServer03" placeholder="Card image-top" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid city.
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="validationServer04">Card Text</label>
+                            <input name="cardText" type="text" class="form-control" id="validationServer04" placeholder="Card Text">
+                            <div class="invalid-feedback">
+                                Please provide a valid state.
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="validationServer05">Text muted</label>
+                            <input name="textMuted" type="text" class="form-control" id="validationServer05" placeholder="Text muted" >
+                            <div class="invalid-feedback">
+                                Please provide a valid zip.
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">create</button>
+                    <!--a href="LogIn.html" type="submit" class="btn btn-primary" role="button" aria-disabled="true">Submit</a-->
+                    <a href="MySite.html" class="btn" role="button" aria-disabled="true" style="padding-left: 500px; padding-top: 20px">Back</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-default fixed-bottom" style="background-color: #e3f2fd">
+    <div class="container-fluid">
+        <p class="text-left" style="color: black">&copy; 2018 Zamaliev Danis</p>
+        <a href="MySite.html" class="btn-right" role="button" aria-disabled="true" style="color: black">To Site</a>
+    </div>
+</nav>
+</body>
+</html>
